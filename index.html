@@ -3,195 +3,155 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROFIT GAINERS - Premium Trade Analysis</title>
-
-<meta name="description" content="Premium trade analysis, live stock graph updates, and expert stock insights by PROFIT GAINERS.">
-
-<!-- META PIXEL -->
-<script>
-!function(f,b,e,v,n,t,s){
-if(f.fbq)return;n=f.fbq=function(){
-n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
-s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-
-const DEMO_PIXEL_ID = '2303780293446237';
-fbq('init', DEMO_PIXEL_ID);
-fbq('track', 'PageView');
-</script>
-
-<script src="https://cdn.tailwindcss.com"></script>
+<title>PROFIT GAINER</title>
 
 <style>
-.glass {
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(22px);
-  border: 1px solid rgba(255,255,255,0.12);
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: white;
+  background: black;
+  overflow-x: hidden;
 }
 
-.glow {
-  box-shadow: 0 0 35px rgba(255,180,0,.7);
+/* BACKGROUND VIDEO */
+.video-bg {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.pulse-btn {
-  animation: pulse 1.6s infinite;
+/* MAIN CONTENT */
+.container {
+  text-align: center;
+  padding: 60px 20px;
 }
 
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.06); }
-  100% { transform: scale(1); }
-}
-
-.ticker {
-  white-space: nowrap;
+/* PROFILE IMAGE BOX */
+.profile-box {
+  width: 135px;
+  height: 135px;
+  margin: auto;
+  border-radius: 18px;
   overflow: hidden;
-  animation: tickerMove 16s linear infinite;
+  border: 3px solid #00ffcc;
+}
+
+.profile-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TITLE */
+h1 {
+  margin-top: 15px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* LIVE MOVING TICKER */
+.ticker {
+  margin-top: 8px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #00ffcc;
+  font-weight: bold;
+}
+
+.ticker span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: tickerMove 10s linear infinite;
 }
 
 @keyframes tickerMove {
-  from { transform: translateX(100%); }
+  from { transform: translateX(0); }
   to { transform: translateX(-100%); }
+}
+
+/* MEMBERS COUNTER */
+.counter {
+  font-size: 22px;
+  margin-top: 14px;
+  font-weight: bold;
+  color: #00ffcc;
+}
+
+/* DESCRIPTION */
+p {
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* TELEGRAM BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 22px;
+  padding: 14px 34px;
+  background: #00ffcc;
+  color: black;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 16px;
 }
 </style>
 </head>
 
-<body class="bg-black min-h-screen text-white">
+<body>
 
-<!-- BACKGROUND STACK -->
-<div class="fixed inset-0 overflow-hidden">
+<!-- BACKGROUND VIDEO -->
+<video class="video-bg" autoplay muted loop playsinline>
+  <source src="https://res.cloudinary.com/dzhykus7z/video/upload/v1770384010/PROFITG_a6cyan.mp4" type="video/mp4">
+</video>
 
-  <!-- BASE IMAGE -->
-  <img src="https://github.com/mrxsetup/susantsharma2020/blob/main/susantimg.jpg?raw=true"
-       class="absolute inset-0 w-full h-full object-cover opacity-15">
+<!-- MAIN CONTENT -->
+<div class="container">
 
-  <!-- CLEAR HD VIDEO -->
-  <video autoplay muted loop playsinline
-         class="absolute inset-0 w-full h-full object-cover opacity-95"
-         style="filter: contrast(120%) brightness(105%) saturate(120%);">
-    <source src="https://res.cloudinary.com/dzhykus7z/video/upload/v1770384010/PROFITG_a6cyan.mp4" type="video/mp4">
-  </video>
-
-  <!-- SOFT DARK OVERLAY -->
-  <div class="absolute inset-0 bg-black/40"></div>
-
-</div>
-
-<!-- LIVE STOCK TICKER -->
-<div class="fixed top-0 w-full bg-black/70 text-green-400 text-sm py-1 z-50">
-  <div class="ticker px-4">
-    NIFTY +1.42% ▲ | BANKNIFTY +0.98% ▲ | RELIANCE +2.31% ▲ | TATA MOTORS +1.55% ▲ | INFY +0.89% ▲ | HDFC +1.12% ▲
-  </div>
-</div>
-
-<div class="relative z-10 flex justify-center items-center min-h-screen p-4">
-
-<div class="glass max-w-lg w-full rounded-[2rem] p-7 shadow-2xl">
-
-<!-- HEADER -->
-<div class="text-center mb-6 mt-4">
-  <h1 class="text-5xl font-black bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
-    PROFIT GAINERS
-  </h1>
-  <p class="text-gray-300 mt-2">Premium Trade Analysis</p>
-</div>
-
-<!-- PROFILE -->
-<div class="flex gap-4 bg-white/5 p-5 rounded-xl border border-white/10 mb-6">
-
-  <div class="w-24 h-24 rounded-xl bg-gradient-to-r from-yellow-500 to-red-500 p-[3px] glow">
-    <img src="https://github.com/mrxsetup/PROFIT-GAINER/blob/main/PPROFIT.jpg?raw=true"
-         class="rounded-xl w-full h-full object-cover">
+  <!-- PROFILE IMAGE -->
+  <div class="profile-box">
+    <img src="https://github.com/mrxsetup/PROFIT-GAINER/blob/main/PPROFIT.jpg?raw=true">
   </div>
 
-  <div class="flex-1">
-    <div class="flex gap-2 mb-2">
-      <span class="px-3 py-1 bg-yellow-600 rounded-full text-xs font-bold">⭐ Verified Expert</span>
-      <span class="px-3 py-1 bg-red-600 rounded-full text-xs font-bold">LIVE</span>
-    </div>
+  <!-- NAME -->
+  <h1>PROFIT GAINER</h1>
 
-    <p class="text-yellow-300 text-sm font-semibold">
-      👥 <span id="count">0</span>+ Members
-    </p>
+  <!-- LIVE MOVING LINE -->
+  <div class="ticker">
+    <span>📈 LIVE MARKET • BANKNIFTY • NIFTY CALLS • HIGH ACCURACY • DAILY PROFITS • TRUSTED TRADING COMMUNITY</span>
   </div>
 
-</div>
+  <!-- MEMBERS COUNTER -->
+  <div class="counter" id="counter">0+</div>
 
-<!-- TELEGRAM BUTTON -->
-<a id="joinBtn" href="https://t.me/+vkUhiYxOKjpjOTg1" target="_blank" class="block pulse-btn mb-6">
+  <!-- DESCRIPTION -->
+  <p>Premium Trade Analysis • Live Market Insights • Strong Trading Community</p>
 
-  <div class="bg-gradient-to-r from-yellow-600 to-red-600 p-5 rounded-xl shadow-xl text-center font-bold text-xl">
-    🚀 JOIN LIVE TELEGRAM
-  </div>
-
-</a>
-
-<!-- FEATURES -->
-<div class="space-y-3 text-sm">
-  <div class="bg-white/5 p-4 rounded-xl">✔ Expert Stock Analysis</div>
-  <div class="bg-white/5 p-4 rounded-xl">📈 Live Graph Analysis</div>
-  <div class="bg-white/5 p-4 rounded-xl">👥 Strong Trading Community</div>
-</div>
-
-<!-- ANIMATED PROFIT BAR -->
-<div class="mt-6">
-  <p class="text-sm text-gray-300 mb-1">📊 Weekly Profit Growth</p>
-  <div class="w-full bg-white/10 rounded-full h-3 overflow-hidden">
-    <div id="profitBar" class="bg-green-500 h-full rounded-full w-0"></div>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<div class="text-center text-xs text-gray-400 mt-6 border-t border-white/10 pt-4">
-  For educational purposes only<br>
-  Trading involves risk — no guaranteed profit<br>
-  <span class="text-yellow-400 font-semibold">Advertise by MRXSETUP</span>
-</div>
+  <!-- TELEGRAM LINK -->
+  <a href="https://t.me/+vkUhiYxOKjpjOTg1" class="btn">JOIN TELEGRAM</a>
 
 </div>
-</div>
 
-<!-- MEMBERS COUNTER -->
 <script>
-let count = document.getElementById("count");
+let count = 0;
 let target = 30000;
-let current = 0;
+let speed = 6;
 
-let counter = setInterval(() => {
-  current += Math.ceil((target - current) / 18);
-  if (current >= target) {
-    current = target;
-    clearInterval(counter);
+let counter = document.getElementById("counter");
+
+let interval = setInterval(() => {
+  count += speed;
+  counter.innerText = count.toLocaleString() + "+";
+  if (count >= target) {
+    counter.innerText = "30,000+";
+    clearInterval(interval);
   }
-  count.innerText = current.toLocaleString();
-}, 25);
-</script>
-
-<!-- PROFIT BAR ANIMATION -->
-<script>
-let bar = document.getElementById("profitBar");
-let width = 0;
-let profitInterval = setInterval(() => {
-  width += 1;
-  bar.style.width = width + "%";
-  if(width >= 87) clearInterval(profitInterval);
-}, 30);
-</script>
-
-<!-- ANTI BOT + SAFE LEAD TRACK -->
-<script>
-let tracked = false;
-document.getElementById("joinBtn").addEventListener("click", function(e){
-  if(tracked) return;
-  if (navigator.webdriver || window.callPhantom || window._phantom) {
-    e.preventDefault();
-    return;
-  }
-  tracked = true;
-  fbq('trackSingle', DEMO_PIXEL_ID, 'Lead');
-});
+}, 20);
 </script>
 
 </body>
