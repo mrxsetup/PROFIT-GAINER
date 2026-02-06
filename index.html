@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PROFIT GAINERS - Premium Trade Analysis</title>
 
-<meta name="description" content="Premium trade analysis, live stock graph updates, and expert stock insights by PROFIT GAINERS. Join our Telegram community now.">
+<meta name="description" content="Premium trade analysis, live stock graph updates, and expert stock insights by PROFIT GAINERS.">
 
-<!-- META PIXEL DEMO -->
+<!-- META PIXEL -->
 <script>
 !function(f,b,e,v,n,t,s){
 if(f.fbq)return;n=f.fbq=function(){
@@ -17,29 +17,22 @@ n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;
 s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
 }(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
 
-const DEMO_PIXEL_ID = '2303780293446237'; 
-
+const DEMO_PIXEL_ID = '2303780293446237';
 fbq('init', DEMO_PIXEL_ID);
 fbq('track', 'PageView');
 </script>
 
-<noscript>
-<img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=2303780293446237&ev=PageView&noscript=1"/>
-</noscript>
-
 <script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 .glass {
-  background: rgba(0,0,0,0.45);
+  background: rgba(0,0,0,0.5);
   backdrop-filter: blur(22px);
-  border: 1px solid rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.12);
 }
 
 .glow {
-  box-shadow: 0 0 25px rgba(255,180,0,.6), 0 0 70px rgba(255,80,0,.35);
+  box-shadow: 0 0 35px rgba(255,180,0,.7);
 }
 
 .pulse-btn {
@@ -48,8 +41,19 @@ src="https://www.facebook.com/tr?id=2303780293446237&ev=PageView&noscript=1"/>
 
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
+  50% { transform: scale(1.06); }
   100% { transform: scale(1); }
+}
+
+.ticker {
+  white-space: nowrap;
+  overflow: hidden;
+  animation: tickerMove 16s linear infinite;
+}
+
+@keyframes tickerMove {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
 }
 </style>
 </head>
@@ -59,22 +63,27 @@ src="https://www.facebook.com/tr?id=2303780293446237&ev=PageView&noscript=1"/>
 <!-- BACKGROUND STACK -->
 <div class="fixed inset-0 overflow-hidden">
 
-  <!-- BASE COLOR -->
-  <div class="absolute inset-0 bg-black"></div>
-
-  <!-- IMAGE LAYER -->
+  <!-- BASE IMAGE -->
   <img src="https://github.com/mrxsetup/susantsharma2020/blob/main/susantimg.jpg?raw=true"
-       class="absolute inset-0 w-full h-full object-cover opacity-25">
+       class="absolute inset-0 w-full h-full object-cover opacity-15">
 
-  <!-- VIDEO ABOVE IMAGE -->
+  <!-- CLEAR HD VIDEO -->
   <video autoplay muted loop playsinline
-         class="absolute inset-0 w-full h-full object-cover opacity-55">
+         class="absolute inset-0 w-full h-full object-cover opacity-95"
+         style="filter: contrast(120%) brightness(105%) saturate(120%);">
     <source src="https://res.cloudinary.com/dzhykus7z/video/upload/v1770384010/PROFITG_a6cyan.mp4" type="video/mp4">
   </video>
 
-  <!-- DARK OVERLAY -->
-  <div class="absolute inset-0 bg-gradient-to-br from-yellow-900/85 via-black/85 to-orange-900/85"></div>
+  <!-- SOFT DARK OVERLAY -->
+  <div class="absolute inset-0 bg-black/40"></div>
 
+</div>
+
+<!-- LIVE STOCK TICKER -->
+<div class="fixed top-0 w-full bg-black/70 text-green-400 text-sm py-1 z-50">
+  <div class="ticker px-4">
+    NIFTY +1.42% ▲ | BANKNIFTY +0.98% ▲ | RELIANCE +2.31% ▲ | TATA MOTORS +1.55% ▲ | INFY +0.89% ▲ | HDFC +1.12% ▲
+  </div>
 </div>
 
 <div class="relative z-10 flex justify-center items-center min-h-screen p-4">
@@ -82,8 +91,8 @@ src="https://www.facebook.com/tr?id=2303780293446237&ev=PageView&noscript=1"/>
 <div class="glass max-w-lg w-full rounded-[2rem] p-7 shadow-2xl">
 
 <!-- HEADER -->
-<div class="text-center mb-6">
-  <h1 class="text-5xl font-black bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-transparent bg-clip-text">
+<div class="text-center mb-6 mt-4">
+  <h1 class="text-5xl font-black bg-gradient-to-r from-yellow-400 to-red-500 text-transparent bg-clip-text">
     PROFIT GAINERS
   </h1>
   <p class="text-gray-300 mt-2">Premium Trade Analysis</p>
@@ -113,10 +122,8 @@ src="https://www.facebook.com/tr?id=2303780293446237&ev=PageView&noscript=1"/>
 <!-- TELEGRAM BUTTON -->
 <a id="joinBtn" href="https://t.me/+vkUhiYxOKjpjOTg1" target="_blank" class="block pulse-btn mb-6">
 
-  <div class="bg-gradient-to-r from-yellow-600 to-red-600 p-5 rounded-xl shadow-xl">
-    <div class="flex justify-center items-center gap-3 text-xl font-bold">
-      🚀 JOIN LIVE TELEGRAM
-    </div>
+  <div class="bg-gradient-to-r from-yellow-600 to-red-600 p-5 rounded-xl shadow-xl text-center font-bold text-xl">
+    🚀 JOIN LIVE TELEGRAM
   </div>
 
 </a>
@@ -128,9 +135,17 @@ src="https://www.facebook.com/tr?id=2303780293446237&ev=PageView&noscript=1"/>
   <div class="bg-white/5 p-4 rounded-xl">👥 Strong Trading Community</div>
 </div>
 
+<!-- ANIMATED PROFIT BAR -->
+<div class="mt-6">
+  <p class="text-sm text-gray-300 mb-1">📊 Weekly Profit Growth</p>
+  <div class="w-full bg-white/10 rounded-full h-3 overflow-hidden">
+    <div id="profitBar" class="bg-green-500 h-full rounded-full w-0"></div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <div class="text-center text-xs text-gray-400 mt-6 border-t border-white/10 pt-4">
-  For educational & entertainment purposes only<br>
+  For educational purposes only<br>
   Trading involves risk — no guaranteed profit<br>
   <span class="text-yellow-400 font-semibold">Advertise by MRXSETUP</span>
 </div>
@@ -145,27 +160,35 @@ let target = 30000;
 let current = 0;
 
 let counter = setInterval(() => {
-  current += Math.ceil((target - current) / 20);
+  current += Math.ceil((target - current) / 18);
   if (current >= target) {
     current = target;
     clearInterval(counter);
   }
   count.innerText = current.toLocaleString();
+}, 25);
+</script>
+
+<!-- PROFIT BAR ANIMATION -->
+<script>
+let bar = document.getElementById("profitBar");
+let width = 0;
+let profitInterval = setInterval(() => {
+  width += 1;
+  bar.style.width = width + "%";
+  if(width >= 87) clearInterval(profitInterval);
 }, 30);
 </script>
 
 <!-- ANTI BOT + SAFE LEAD TRACK -->
 <script>
 let tracked = false;
-
 document.getElementById("joinBtn").addEventListener("click", function(e){
   if(tracked) return;
-
   if (navigator.webdriver || window.callPhantom || window._phantom) {
     e.preventDefault();
     return;
   }
-
   tracked = true;
   fbq('trackSingle', DEMO_PIXEL_ID, 'Lead');
 });
