@@ -9,33 +9,36 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  color: white;
   background: black;
+  color: white;
   overflow-x: hidden;
 }
 
-/* BACKGROUND VIDEO */
+/* VIDEO BACKGROUND */
 .video-bg {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  z-index: -1;
+  z-index: -2;
 }
 
 /* MAIN CONTENT */
 .container {
+  position: relative;
+  z-index: 2;
   text-align: center;
   padding: 60px 20px;
 }
 
 /* PROFILE IMAGE BOX */
 .profile-box {
-  width: 135px;
-  height: 135px;
+  width: 130px;
+  height: 130px;
   margin: auto;
-  border-radius: 18px;
+  border-radius: 15px;
   overflow: hidden;
   border: 3px solid #00ffcc;
 }
@@ -46,14 +49,13 @@ body {
   object-fit: cover;
 }
 
-/* TITLE */
+/* TEXT */
 h1 {
   margin-top: 15px;
-  font-size: 30px;
-  font-weight: bold;
+  font-size: 28px;
 }
 
-/* LIVE MOVING TICKER */
+/* MOVING LIVE LINE */
 .ticker {
   margin-top: 8px;
   overflow: hidden;
@@ -66,39 +68,29 @@ h1 {
 .ticker span {
   display: inline-block;
   padding-left: 100%;
-  animation: tickerMove 10s linear infinite;
+  animation: moveTicker 12s linear infinite;
 }
 
-@keyframes tickerMove {
+@keyframes moveTicker {
   from { transform: translateX(0); }
   to { transform: translateX(-100%); }
 }
 
-/* MEMBERS COUNTER */
-.counter {
-  font-size: 22px;
-  margin-top: 14px;
-  font-weight: bold;
-  color: #00ffcc;
-}
-
-/* DESCRIPTION */
 p {
   font-size: 15px;
   opacity: 0.9;
 }
 
-/* TELEGRAM BUTTON */
+/* BUTTON */
 .btn {
   display: inline-block;
-  margin-top: 22px;
-  padding: 14px 34px;
+  margin-top: 20px;
+  padding: 14px 30px;
   background: #00ffcc;
   color: black;
   font-weight: bold;
   border-radius: 8px;
   text-decoration: none;
-  font-size: 16px;
 }
 </style>
 </head>
@@ -110,49 +102,25 @@ p {
   <source src="https://res.cloudinary.com/dzhykus7z/video/upload/v1770384010/PROFITG_a6cyan.mp4" type="video/mp4">
 </video>
 
-<!-- MAIN CONTENT -->
+<!-- CONTENT -->
 <div class="container">
 
-  <!-- PROFILE IMAGE -->
   <div class="profile-box">
     <img src="https://github.com/mrxsetup/PROFIT-GAINER/blob/main/PPROFIT.jpg?raw=true">
   </div>
 
-  <!-- NAME -->
   <h1>PROFIT GAINER</h1>
 
-  <!-- LIVE MOVING LINE -->
+  <!-- LIVE MOVING NIFTY LINE -->
   <div class="ticker">
-    <span>📈 LIVE MARKET • BANKNIFTY • NIFTY CALLS • HIGH ACCURACY • DAILY PROFITS • TRUSTED TRADING COMMUNITY</span>
+    <span>📈 LIVE NIFTY CALLS • BANKNIFTY • SURE PROFIT • HIGH ACCURACY • DAILY WINNING </span>
   </div>
 
-  <!-- MEMBERS COUNTER -->
-  <div class="counter" id="counter">0+</div>
+  <p>Trusted Premium Cricket Prediction Channel</p>
 
-  <!-- DESCRIPTION -->
-  <p>Premium Trade Analysis • Live Market Insights • Strong Trading Community</p>
-
-  <!-- TELEGRAM LINK -->
-  <a href="https://t.me/+vkUhiYxOKjpjOTg1" class="btn">JOIN TELEGRAM</a>
+  <a href="https://t.me/+zZdHbeweUK8wYzVl" class="btn">JOIN TELEGRAM</a>
 
 </div>
-
-<script>
-let count = 0;
-let target = 30000;
-let speed = 6;
-
-let counter = document.getElementById("counter");
-
-let interval = setInterval(() => {
-  count += speed;
-  counter.innerText = count.toLocaleString() + "+";
-  if (count >= target) {
-    counter.innerText = "30,000+";
-    clearInterval(interval);
-  }
-}, 20);
-</script>
 
 </body>
 </html>
