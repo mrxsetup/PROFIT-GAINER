@@ -31,27 +31,7 @@ src="https://www.facebook.com/tr?id=2303780293446237&ev=PageView&noscript=1"/>
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      fontFamily: { sans: ['Poppins', 'sans-serif'] }
-    }
-  }
-}
-</script>
-
 <style>
-@keyframes gradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-.animate-gradient {
-  background-size: 200% 200%;
-  animation: gradient 6s ease infinite;
-}
-
 .glass {
   background: rgba(0,0,0,0.45);
   backdrop-filter: blur(22px);
@@ -71,32 +51,29 @@ tailwind.config = {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
-
-.shine:hover {
-  filter: brightness(1.2);
-  transform: scale(1.04);
-  transition: .25s ease;
-}
 </style>
 </head>
 
 <body class="bg-black min-h-screen text-white">
 
-<!-- BACKGROUND -->
+<!-- BACKGROUND STACK -->
 <div class="fixed inset-0 overflow-hidden">
 
-  <!-- BASE IMAGE -->
-  <img src="https://github.com/mrxsetup/susantsharma2020/blob/main/susantimg.jpg?raw=true"
-       class="absolute inset-0 w-full h-full object-cover opacity-25" loading="lazy">
+  <!-- BASE COLOR -->
+  <div class="absolute inset-0 bg-black"></div>
 
-  <!-- VIDEO SECOND LAYER -->
+  <!-- IMAGE LAYER -->
+  <img src="https://github.com/mrxsetup/susantsharma2020/blob/main/susantimg.jpg?raw=true"
+       class="absolute inset-0 w-full h-full object-cover opacity-25">
+
+  <!-- VIDEO ABOVE IMAGE -->
   <video autoplay muted loop playsinline
-         class="absolute inset-0 w-full h-full object-cover opacity-45">
+         class="absolute inset-0 w-full h-full object-cover opacity-55">
     <source src="https://res.cloudinary.com/dzhykus7z/video/upload/v1770384010/PROFITG_a6cyan.mp4" type="video/mp4">
   </video>
 
   <!-- DARK OVERLAY -->
-  <div class="absolute inset-0 bg-gradient-to-br from-yellow-900/85 via-black/80 to-orange-900/85"></div>
+  <div class="absolute inset-0 bg-gradient-to-br from-yellow-900/85 via-black/85 to-orange-900/85"></div>
 
 </div>
 
@@ -106,7 +83,7 @@ tailwind.config = {
 
 <!-- HEADER -->
 <div class="text-center mb-6">
-  <h1 class="text-5xl font-black animate-gradient bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-transparent bg-clip-text">
+  <h1 class="text-5xl font-black bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 text-transparent bg-clip-text">
     PROFIT GAINERS
   </h1>
   <p class="text-gray-300 mt-2">Premium Trade Analysis</p>
@@ -117,8 +94,6 @@ tailwind.config = {
 
   <div class="w-24 h-24 rounded-xl bg-gradient-to-r from-yellow-500 to-red-500 p-[3px] glow">
     <img src="https://github.com/mrxsetup/PROFIT-GAINER/blob/main/PPROFIT.jpg?raw=true"
-         alt="Profit Gainers Profile"
-         loading="lazy"
          class="rounded-xl w-full h-full object-cover">
   </div>
 
@@ -138,7 +113,7 @@ tailwind.config = {
 <!-- TELEGRAM BUTTON -->
 <a id="joinBtn" href="https://t.me/+vkUhiYxOKjpjOTg1" target="_blank" class="block pulse-btn mb-6">
 
-  <div class="bg-gradient-to-r from-yellow-600 to-red-600 p-5 rounded-xl shadow-xl shine">
+  <div class="bg-gradient-to-r from-yellow-600 to-red-600 p-5 rounded-xl shadow-xl">
     <div class="flex justify-center items-center gap-3 text-xl font-bold">
       🚀 JOIN LIVE TELEGRAM
     </div>
@@ -170,14 +145,11 @@ let target = 30000;
 let current = 0;
 
 let counter = setInterval(() => {
-  let step = Math.max(1, Math.ceil((target - current) / 20));
-  current += step;
-
+  current += Math.ceil((target - current) / 20);
   if (current >= target) {
     current = target;
     clearInterval(counter);
   }
-
   count.innerText = current.toLocaleString();
 }, 30);
 </script>
@@ -187,10 +159,9 @@ let counter = setInterval(() => {
 let tracked = false;
 
 document.getElementById("joinBtn").addEventListener("click", function(e){
-
   if(tracked) return;
 
-  if (navigator.webdriver || window.callPhantom || window._phantom || window.HeadlessChrome) {
+  if (navigator.webdriver || window.callPhantom || window._phantom) {
     e.preventDefault();
     return;
   }
